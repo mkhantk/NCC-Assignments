@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.icons {
+  @apply flex justify-arounditems-center gap-3;
+}
+
+.icon {
+  @apply w-8 p-1 ring-1 rounded-md m-auto;
+}
+.id-card {
+  @apply ring-blue-500;
+}
+
+.rows > .id {
+  @apply font-bold text-3xl;
+}
+
+.edit {
+  @apply ring-green-500;
+}
+
+.trash {
+  @apply ring-red-500;
+}
+.rows {
+  @apply h-16;
+}
+
+.image {
+  @apply m-auto w-8 rounded-full;
+}

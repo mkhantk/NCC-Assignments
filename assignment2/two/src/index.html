@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Admin Page</title>
+  </head>
+  <body class="min-h-screen">
+    <div class="wrapper p-2">
+      <header class="flex justify-between items-center my-2">
+        <div
+          class="add flex justify-center items-center gap-2 bg-indigo-900 py-2 text-white px-8 rounded-md"
+        >
+          <img src="images/plus-alt-svgrepo-com.svg" alt="" class="w-6" />
+          <span>Add Admin</span>
+        </div>
+        <div
+          class="page flex justify-center items-center gap-2 bg-gray-300 rounded-md p-2"
+        >
+          <div>page: <span>1</span></div>
+          <div>total: <span>20</span></div>
+          <img
+            src="images/chevron-left-svgrepo-com.svg"
+            alt=""
+            class="w-6 rounded-md"
+          />
+          <img
+            src="images/chevron-right-svgrepo-com.svg"
+            alt=""
+            class="w-6 rounded-md"
+          />
+        </div>
+      </header>
+      <div class="content">
+        <table class="w-full text-center divide-y">
+          <thead class="bg-gray-100 font-bold h-8">
+            <td>ID</td>
+            <td>PHOTO</td>
+            <td>LOGIN NAME</td>
+            <td>NAME</td>
+            <td>EMAIL</td>
+            <td>STAFF OWN</td>
+            <td>ACTIONS</td>
+          </thead>
+        </table>
+      </div>
+    </div>
+    <script>
+      let table = document.querySelector("table");
+      let mockdata = [];
+
+      fetch("./MOCK_DATA.json")
+        .then((responese) => responese.json())
+        .then((data) => {
+          // console.log(data);
+          mockdata = data;
+          // console.log(mockdata);
+          showData(mockdata);
+        })
+        .catch((error) => console.error(error));
+
+      function showData(data) {
+        for (let i = 0; i < data.length; i++) {
+          let keys = Object.keys(data[i]);
+
+          let tableRow = document.createElement("tr");
+          tableRow.classList.add("rows");
+          table.appendChild(tableRow);
+
+          for (let x = 0; x <= keys.length; x++) {
+            if (x === keys.length) {
+              let tableData = document.createElement("td");
+              let div = document.createElement("div");
+              div.classList.add("icons");
+              let idIcon = document.createElement("img");
+              idIcon.src = "./images/id-card-svgrepo-com.svg";
+              idIcon.alt = "";
+              idIcon.classList.add("icon", "id-card");
+              div.appendChild(idIcon);
+
+              let editIcon = document.createElement("img");
+              editIcon.src = "./images/edit-svgrepo-com.svg";
+              editIcon.alt = "";
+              editIcon.classList.add("icon", "edit");
+              div.appendChild(editIcon);
+
+              let trashIcon = document.createElement("img");
+              trashIcon.src = "./images/trash-svgrepo-com.svg";
+              trashIcon.alt = "";
+              trashIcon.classList.add("icon", "trash");
+              div.appendChild(trashIcon);
+
+              tableData.appendChild(div);
+              tableRow.appendChild(tableData);
+            } else if (keys[x] === "photo") {
+              let key = keys[x];
+              let tableData = document.createElement("td");
+              let image = document.createElement("img");
+              image.alt = "";
+              image.classList.add("image");
+              image.src = data[i][key];
+
+              tableData.appendChild(image);
+              tableRow.appendChild(tableData);
+            } else {
+              let key = keys[x];
+              let tableData = document.createElement("td");
+              tableData.classList.add(key);
+              tableData.textContent = data[i][key];
+              tableRow.appendChild(tableData);
+            }
+          }
+        }
+        // table.appendChild(tableRow);
+      }
+      // for (let i = 0; i < mockdata.length; i++) {
+      //   let tableData = document.createElement("tr");
+      // }
+    </script>
+  </body>
+</html>
