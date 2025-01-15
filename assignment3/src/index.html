@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pages</title>
+    <link rel="stylesheet" href="output.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body class="min-h-screen">
+    <div
+      class="min-h-screen shadow-inner flex flex-col justify-center items-center relative"
+    >
+      <header class="flex justify-start items-center shadow-md px-5 w-full">
+        <div class="p-5 cursor-pointer activeTab" id="alert">Alert Box</div>
+        <div class="p-5 cursor-pointer activeTab" id="todo">Todo</div>
+        <div class="p-5 cursor-pointer activeTab" id="form">Form</div>
+      </header>
+
+      <!-- dialog -->
+      <div
+        id="alertContainer"
+        class="flex flex-col justify-center items-center m-auto z-30"
+      >
+        <button
+          id="dialog"
+          class="px-4 py-2 rounded-lg text-blue-500 font-bold text-lg bg-gray-300 shadow-sm"
+        >
+          Open Dialog
+        </button>
+        <div
+          id="openedDialog"
+          class="bg-white z-20 hidden flex flex-col justify-center items-start gap-4 p-7 rounded-lg shadow-lg w-3/5 m-auto"
+        >
+          <header class="text-2xl font-bold">Payment successful</header>
+          <p class="text-lg text-gray-600">
+            Your payment has been successfully submitted. We've sent you an
+            email with all of the details of your order.
+          </p>
+          <button
+            id="closeButton"
+            class="px-4 py-2 font-bold text-lg text-indigo-700 bg-blue-100 rounded-md"
+          >
+            Got it, thanks!
+          </button>
+        </div>
+      </div>
+      <div
+        class="overlay hidden bg-black fixed object-center h-full w-full bg-opacity-50 z-10"
+      ></div>
+
+      <!-- todo -->
+      <div id="todoContainer" class="mb-auto">
+        <header class="text-3xl font-bold text-center mt-10 mb-5">
+          Todo App
+        </header>
+        <div class="mb-5">
+          <input
+            id="search"
+            type="search"
+            name="search"
+            class="py-2 px-4 outline outline-1 outline-gray-300 rounded-md placeholder:text-lg placeholder:text-gray-500"
+            placeholder="Search todo"
+            value=""
+          />
+        </div>
+        <table class="storage my-5 w-full px-2"></table>
+        <div class="mb-5">
+          <input
+            id="enter"
+            type="text"
+            name="enter"
+            value=""
+            class="py-2 px-4 outline outline-1 outline-gray-300 rounded-md placeholder:text-lg placeholder:text-gray-500"
+            placeholder="Enter todo"
+          />
+        </div>
+        <button
+          id="submit"
+          class="px-3 py-1 bg-blue-500 rounded-md text-lg text-white"
+          type="submit"
+        >
+          Add Todo
+        </button>
+      </div>
+
+      <!-- form -->
+      <div id="formContainer" class="m-auto shadow-lg p-8 w-1/4 max-w-96">
+        <header class="text-2xl font-bold mb-5">Login</header>
+        <form
+          id="loginForm"
+          action=""
+          target="_blank"
+          class="flex flex-col justify-center items-start gap-5"
+        >
+          <div class="w-full flex flex-col justify-center items-start gap-1">
+            <label for="name" class="font-bold text-lg">Name</label>
+            <input
+              class="w-full outline outline-1 rounded-sm px-3 py-1 outline-gray-400"
+              type="text"
+              name="name"
+              id="name"
+            />
+            <div id="nameError" class="text-red-500 text-sm hidden">
+              Name must include a lowercase letter and a number
+            </div>
+          </div>
+          <div class="w-full flex flex-col justify-center items-start gap-1">
+            <label for="email" class="font-bold text-lg">Email</label>
+            <input
+              class="w-full outline outline-1 rounded-sm px-3 py-1 outline-gray-400"
+              type="email"
+              name="email"
+              id="email"
+            />
+            <div id="emailError" class="text-red-500 text-sm hidden">
+              Invlalid email format
+            </div>
+          </div>
+          <div class="w-full flex flex-col justify-center items-start gap-1">
+            <label for="password" class="font-bold text-lg">Password</label>
+            <input
+              class="w-full outline outline-1 rounded-sm px-3 py-1 outline-gray-400"
+              type="password"
+              name="password"
+              id="password"
+              value=""
+            />
+            <div id="passwordError" class="text-red-500 text-sm hidden">
+              Password must be at least 6 characters
+            </div>
+          </div>
+          <button
+            id="loginButton"
+            type="submit"
+            class="bg-blue-500 flex-grow w-full py-1.5 rounded-md text-lg text-white mt-1"
+          >
+            Log in
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

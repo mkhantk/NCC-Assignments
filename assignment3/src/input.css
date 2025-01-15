@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.activeTab {
+  @apply border-b-4 border-blue-500;
+}
+
+tr {
+  @apply flex justify-between items-center border-b border-gray-400 h-10;
+}
+img {
+  @apply w-5 cursor-pointer;
+}
