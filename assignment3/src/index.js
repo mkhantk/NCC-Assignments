@@ -153,23 +153,29 @@ const namePattern = /[a-zA-Z][0-9]/;
 const emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
 
 loginForm.addEventListener("submit", (e) => {
-  // e.preventDefault();
+  e.preventDefault();
   if (!namePattern.test(userName.value)) {
     document.querySelector("#nameError").style.display = "block";
+    userName.classList.add("error");
     // console.log(document.getElementById("nameError").style);
   } else {
     document.querySelector("#nameError").style.display = "none";
+    userName.classList.remove("error");
   }
 
   if (!emailPattern.test(email.value)) {
     document.querySelector("#emailError").style.display = "block";
+    email.classList.add("error");
   } else {
     document.querySelector("#emailError").style.display = "none";
+    email.classList.remove("error");
   }
 
   if (pwd.value.length >= 6) {
     document.querySelector("#passwordError").style.display = "none";
+    pwd.classList.remove("error");
   } else {
     document.querySelector("#passwordError").style.display = "block";
+    pwd.classList.add("error");
   }
 });
