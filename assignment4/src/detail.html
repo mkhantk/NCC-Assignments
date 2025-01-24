@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <script src="navbar.js" defer></script>
+    <script src="detail.js" defer></script>
+    <title>Post Details</title>
+  </head>
+  <body class="min-h-screen">
+    <div class="wrapper flex flex-col justify-center items-center relative">
+      <nav
+        class="flex justify-end gap-5 items-center p-5 w-full fixed top-0 bg-white shadow-sm"
+      >
+        <div class="text-lg font-bold cursor-pointer landing mr-auto">
+          Bloggify
+        </div>
+        <div
+          id="landingPageLink"
+          class="cursor-pointer landing hidden sm:block"
+        >
+          Home
+        </div>
+        <div id="homepageLink" class="cursor-pointer post">Posts</div>
+        <div id="createPostlink" class="cursor-pointer create">
+          Create a post
+        </div>
+        <div class="">
+          <button
+            id="loginButton"
+            class="px-5 py-1 bg-blue-500 rounded-md text-white hover:shadow-md shadow-indigo-300 login"
+          >
+            Login
+          </button>
+          <button
+            id="logoutButton"
+            class="px-5 py-1 bg-red-500 rounded-md text-white hover:shadow-md shadow-indigo-300"
+          >
+            Logout
+          </button>
+        </div>
+      </nav>
+      <div id="postDetailContainer" class="mt-20">this is post</div>
+    </div>
+  </body>
+</html>

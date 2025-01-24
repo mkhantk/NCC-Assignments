@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.error {
+  @apply outline-red-500;
+}
+
+.previewImg {
+  @apply w-56 h-40 mb-2 rounded-sm;
+}
+
+.previewItem {
+  @apply w-60 flex flex-col justify-start bg-white shadow-md rounded-md p-5;
+}
+.author {
+  @apply text-end mt-auto;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+#preview_container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#preview_container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.posts {
+  @apply flex min-w-96 shadow-md rounded-md p-3 cursor-pointer bg-indigo-300;
+}
+.postImg {
+  @apply w-32 h-32 sm:w-60 sm:h-60 rounded-md;
+}
+.contentDiv {
+  @apply w-full sm:w-full p-3 flex flex-col justify-start gap-3;
+}
+.titleDiv {
+  @apply flex justify-between items-center;
+}
+
+.authorDiv {
+  @apply w-full text-end mt-auto;
+}

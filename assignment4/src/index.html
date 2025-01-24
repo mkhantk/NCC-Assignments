@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <script src="navbar.js" defer></script>
+    <script src="index.js" defer></script>
+    <title>Bloggify</title>
+  </head>
+  <body class="min-h-screen">
+    <div class="wrapper flex flex-col justify-center items-center relative">
+      <nav
+        class="flex justify-end gap-5 items-center p-5 w-full fixed top-0 bg-white shadow-sm"
+      >
+        <div class="text-lg font-bold cursor-pointer landing mr-auto">
+          Bloggify
+        </div>
+        <div
+          id="landingPageLink"
+          class="cursor-pointer landing hidden sm:block"
+        >
+          Home
+        </div>
+        <div id="homepageLink" class="cursor-pointer post">Posts</div>
+        <div id="createPostlink" class="cursor-pointer create">
+          Create a post
+        </div>
+        <div class="">
+          <button
+            id="loginButton"
+            class="px-5 py-1 bg-blue-500 rounded-md text-white hover:shadow-md shadow-indigo-300 login"
+          >
+            Login
+          </button>
+          <button
+            id="logoutButton"
+            class="px-5 py-1 bg-red-500 rounded-md text-white hover:shadow-md shadow-indigo-300"
+          >
+            Logout
+          </button>
+        </div>
+      </nav>
+      <header
+        class="flex flex-col justify-center items-center gap-8 w-full sm:max-w-5xl my-20 p-5"
+      >
+        <h1 class="text-center text-3xl font-bold mt-10">
+          Welcome to <span class="text-blue-500">Bloggify</span>
+        </h1>
+        <p class="text-center font-bold text-lg">
+          Your Stories, Your Voice, Your Community
+        </p>
+        <p class="font-bold text-center text-sm sm:w-1/2">
+          Share your passions, connect with like-minded creators, and inspire
+          the world with Bloggify—the ultimate blogging platform designed for
+          you.
+        </p>
+        <button
+          class="px-5 py-2 bg-blue-500 rounded-md hover:shadow-lg shadow-blue-300 text-white create"
+        >
+          Create your first blog
+        </button>
+      </header>
+      <main class="w-full flex flex-col justify-center items-center">
+        <section
+          class="bg-indigo-300 py-20 w-full flex flex-col justify-center items-center gap-5"
+        >
+          <h1 class="text-3xl font-bold">What is Bloggify?</h1>
+          <p class="font-medium text-start p-5 sm:w-1/2">
+            Bloggify is more than just a blogging platform—it&#39;s a community
+            for creators, storytellers, and mentors who want to make an impact.
+            Whether you&#39;re here to share your knowledge, document your
+            journey, or explore new ideas, Bloggify provides you with the tools
+            to create and connect in meaningful ways. From microblogs to
+            in-depth guides, Bloggify celebrates every voice.
+          </p>
+        </section>
+        <section
+          class="my-10 w-full flex flex-col justify-center items-center gap-5 px-5"
+        >
+          <h1 class="text-3xl font-bold text-center">
+            Why should you join Bloggify?
+          </h1>
+          <ul
+            class="list-disc px-5 font-medium flex flex-col gap-5 my-3 sm:w-1/2 md:pl-20 lg:pl-32"
+          >
+            <li>
+              <span class="font-bold">Share Your Voice: </span>Publish your
+              thoughts with easy-to-use tools.
+            </li>
+            <li>
+              <span class="font-bold">Connect and Collaborate: </span>Build a
+              network of like-minded creators.
+            </li>
+            <li>
+              <span class="font-bold">Grow Your Influence: </span> Reach a
+              global audience and inspire others.
+            </li>
+            <li>
+              <span class="font-bold">Learn and Stay Inspired: </span>Explore
+              diverse content from other creators.
+            </li>
+          </ul>
+        </section>
+        <section
+          id="preview"
+          class="w-full flex flex-col justify-center items-center gap-5 bg-indigo-300 py-8"
+        >
+          <header class="text-3xl font-bold">Here are our latest blogs</header>
+          <div
+            id="preview_container"
+            class="flex flex-nowrap gap-5 overflow-y overflow-x-auto m-auto w-full p-5"
+          ></div>
+        </section>
+        <section
+          class="py-20 w-full flex flex-col justify-center items-center gap-5"
+        >
+          <h1 class="text-3xl font-bold">Join Bloggify Today!</h1>
+          <p class="font-medium mb-8 p-5 sm:w-1/2">
+            Unleash your creativity, share your voice, and connect with a
+            community that&#39;s ready to inspire. Start your journey now
+            &ndash; it&#39;s free and easy!
+          </p>
+          <button
+            class="px-5 py-2 bg-blue-500 rounded-md hover:shadow-md shadow-indigo-300 text-white posts"
+          >
+            Get Started &rarr;
+          </button>
+        </section>
+      </main>
+      <footer class="text-sm my-2">
+        &copy; 2025 | made with ❤️ by Min Khant Kyaw
+      </footer>
+    </div>
+  </body>
+</html>
