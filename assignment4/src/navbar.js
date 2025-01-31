@@ -39,12 +39,12 @@ toCreate.forEach((item) =>
 );
 //check if there is any item in local storage to determin whether to show login or logout button
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("loaded");
+  // console.log("loaded");
   if (localStorage.getItem("bloggify_js_app")) {
     loginButton.style.display = "none";
     logoutButton.style.display = "block";
     // window.location.href = "homepage.html";
-    console.log("logined");
+    // console.log("logined");
   } else {
     loginButton.style.display = "block";
     logoutButton.style.display = "none";

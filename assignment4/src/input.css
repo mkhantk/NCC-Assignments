@@ -5,13 +5,14 @@
 .error {
   @apply outline-red-500;
 }
+/* for index */
 
 .previewImg {
-  @apply w-56 h-40 mb-2 rounded-sm;
+  @apply w-60 h-40 mb-2 rounded-sm;
 }
 
 .previewItem {
-  @apply w-60 flex flex-col justify-start bg-white shadow-md rounded-md p-5;
+  @apply w-60 flex flex-col items-start bg-white shadow-md rounded-md p-5;
 }
 .author {
   @apply text-end mt-auto;
@@ -27,6 +28,7 @@
   scrollbar-width: none; /* Firefox */
 }
 
+/* for Post */
 .posts {
   @apply flex min-w-96 shadow-md rounded-md p-3 cursor-pointer bg-indigo-300;
 }
@@ -34,7 +36,7 @@
   @apply w-32 h-32 sm:w-60 sm:h-60 rounded-md;
 }
 .contentDiv {
-  @apply w-full sm:w-full p-3 flex flex-col justify-start gap-3;
+  @apply w-full text-lg sm:w-full p-3 flex flex-col justify-start gap-3;
 }
 .titleDiv {
   @apply flex justify-between items-center;
@@ -42,4 +44,36 @@
 
 .authorDiv {
   @apply w-full text-end mt-auto;
+}
+
+/* for detail */
+
+.titleDetail {
+  @apply text-5xl font-bold;
+}
+
+.contentDetail {
+  @apply text-lg;
+}
+.userDateContainer {
+  @apply flex justify-between items-center w-1/2;
+}
+
+.imgDetail {
+  @apply w-full h-56;
+}
+
+.buttonDiv {
+  @apply flex justify-around items-center w-full;
+}
+
+.buttonDiv > button {
+  @apply text-white px-5 py-2 rounded-md shadow-md;
+}
+
+.editButton {
+  @apply bg-blue-500;
+}
+.deleteButton {
+  @apply bg-red-500;
 }

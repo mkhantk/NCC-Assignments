@@ -9,7 +9,9 @@
     <title>Post Details</title>
   </head>
   <body class="min-h-screen">
-    <div class="wrapper flex flex-col justify-center items-center relative">
+    <div
+      class="wrapper flex flex-col justify-center items-center relative min-h-screen"
+    >
       <nav
         class="flex justify-end gap-5 items-center p-5 w-full fixed top-0 bg-white shadow-sm"
       >
@@ -41,7 +43,52 @@
           </button>
         </div>
       </nav>
-      <div id="postDetailContainer" class="mt-20">this is post</div>
+      <div
+        id="postDetailContainer"
+        class="mt-20 max-w-3xl w-full p-5 flex flex-col justify-start items-start gap-5"
+      ></div>
+      <footer class="text-sm my-2 mt-auto">
+        &copy; 2025 | made with ❤️ by Min Khant Kyaw
+      </footer>
+
+      <!-- alerts -->
+      <div
+        class="wrong-user hidden absolute bg-black bg-opacity-40 w-full h-full flex flex-col justify-center items-center"
+      >
+        <div class="bg-white shadow-md p-10 rounded-md relative">
+          <p class="text-center text-2xls">
+            Opps! You are not <span id="uname"></span>
+          </p>
+          <button
+            id="cancel-wrong"
+            class="absolute top-0 right-0 bg-red-400 rounded-md"
+          >
+            <img src="cross.svg" alt="" class="w-8" />
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="correct-delete hidden absolute bg-black bg-opacity-40 w-full h-full flex flex-col justify-center items-center"
+      >
+        <div
+          class="bg-white shadow-md p-10 w-64 rounded-md relative flex flex-col justify-center items-center"
+        >
+          <p class="text-center mb-5 text-2xl">Are you sure?</p>
+          <button
+            id="confirm"
+            class="px-5 py-2 bg-blue-500 text-white rounded-md"
+          >
+            Yes. Go ahead!
+          </button>
+          <button
+            id="cancel-correct"
+            class="absolute top-0 right-0 bg-red-400 rounded-md"
+          >
+            <img src="cross.svg" alt="" class="w-8" />
+          </button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
