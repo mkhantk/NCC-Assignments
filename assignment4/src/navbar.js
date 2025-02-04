@@ -50,6 +50,26 @@ document.addEventListener("DOMContentLoaded", () => {
     logoutButton.style.display = "none";
     console.log("logoted");
   }
+
+  const url = window.location.href;
+  const re = /([^\/]+?)\.html/;
+  if (url.match(re)[1] === "index") {
+    document.getElementById("landingPageLink").classList.add("currentPage");
+    document.getElementById("homepageLink").classList.remove("currentPage");
+    document.getElementById("createPostlink").classList.remove("currentPage");
+  } else if (url.match(re)[1] === "homepage") {
+    document.getElementById("landingPageLink").classList.remove("currentPage");
+    document.getElementById("homepageLink").classList.add("currentPage");
+    document.getElementById("createPostlink").classList.remove("currentPage");
+    // console.log("index");
+  } else if (url.match(re)[1] === "create") {
+    document.getElementById("landingPageLink").classList.remove("currentPage");
+    document.getElementById("homepageLink").classList.remove("currentPage");
+    document.getElementById("createPostlink").classList.add("currentPage");
+    // console.log("index");
+  }
+
+  // console.log(url.match(/([^\/]+?)\.html/)[0]);
 });
 
 logoutButton.addEventListener("click", () => {
