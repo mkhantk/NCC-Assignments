@@ -71,7 +71,7 @@ const getData = async (postId) => {
           // result.splice(id - 1, 1);
           document.querySelector(".correct-delete").classList.add("hidden");
           // deletePost(url);
-          // window.location.href = "homepage.html";
+          window.location.href = "homepage.html";
           try {
             const deleteResponse = await fetch(url, {
               method: "DELETE",
@@ -135,12 +135,12 @@ function displayEdit(data) {
 
   dataTemplate += `
   <form action="" id="editForm" class="p-8 flex flex-col items-center justify-start gap-5">
-    <input id="title" type="text" class="titleDetail outline outline-1 px-3 py-1 outline-indigo-300 shadow-md rounded-md" placeholder="Name a title" value="${data.title}" required/>
+    <input id="title" type="text" class="titleDetail  px-3 py-1 bg-gray-700 shadow-md rounded-md" placeholder="Name a title" value="${data.title}" required/>
     <div class="w-full">
       <img id="edit_Img" src=${data.image_url} alt="" class="imgDetail"/>
-      <input type="file" name="editImage" id="editImage" accept="image/*"/>
+      <input type="file" name="editImage" id="editImage" class=" mt-4 px-3 py-1 bg-gray-700 w-full rounded-md text-gray-500 file:text-black" accept="image/*"/>
     </div>
-    <textarea name="content" id="content" rows="10" placeholder="Enter the contents" class="contentDetail outline outline-1 outline-indigo-300 rounded-md shadow-md px-3 py-1 w-full">${data.content}</textarea>
+    <textarea name="content" id="content" rows="10" placeholder="Enter the contents" class="contentDetail  bg-gray-700 rounded-md shadow-md px-3 py-1 w-full">${data.content}</textarea>
     <div class="w-full flex items-center justify-around">
 
       <button type="submit" class="px-5 py-2 bg-blue-500 rounded-md shadow-md text-white" >Save Changes</button>
