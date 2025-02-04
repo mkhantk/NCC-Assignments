@@ -25,7 +25,7 @@ function displayPreview(data) {
   data.map((item) => {
     dataTemplate += `
     <div id=${item.id} class="previewItem">
-      <img src=${item.image_url} alt="" class="previewImg" />
+      <img src=${item.image_url} alt="previewImg" class="previewImg" />
       <p>${item.content.split(" ").splice(0, 10).join(" ")} ...</p>
       <div class="author">${item.created_by}</div>
     </div>
