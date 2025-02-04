@@ -13,25 +13,35 @@
       class="wrapper flex flex-col justify-center items-center relative min-h-screen"
     >
       <nav
-        class="flex justify-end gap-5 items-center p-5 w-full fixed top-0 bg-white shadow-xs"
+        class="flex justify-end gap-5 items-center p-5 w-full fixed top-0 right-0 bg-black shadow-xs shadow-indigo-100"
       >
-        <div class="text-lg font-bold cursor-pointer landing mr-auto">
+        <div
+          class="text-lg font-bold cursor-pointer text-white hover:text-indigo-300 landing mr-auto"
+        >
           Bloggify
         </div>
         <div
           id="landingPageLink"
-          class="cursor-pointer landing hidden sm:block"
+          class="cursor-pointer landing hidden sm:block text-white hover:text-indigo-300"
         >
           Home
         </div>
-        <div id="homepageLink" class="cursor-pointer post">Posts</div>
-        <div id="createPostlink" class="cursor-pointer create">
+        <div
+          id="homepageLink"
+          class="cursor-pointer post text-white hover:text-indigo-300"
+        >
+          Posts
+        </div>
+        <div
+          id="createPostlink"
+          class="cursor-pointer create text-white hover:text-indigo-300"
+        >
           Create a post
         </div>
         <div class="">
           <button
             id="loginButton"
-            class="px-5 py-1 bg-blue-500 rounded-md text-white hover:shadow-md shadow-indigo-300 login"
+            class="px-5 py-1 bg-indigo-400 rounded-md text-white hover:shadow-md shadow-indigo-300 login"
           >
             Login
           </button>
@@ -43,15 +53,25 @@
           </button>
         </div>
       </nav>
-      <main class="mt-20 w-full p-5 lg:max-w-7xl">
-        <header class="text-lg font-bold my-4">
-          Welcome <span class="username">username</span>
+      <main class="mt-20 w-full p-2 sm:p-5 lg:max-w-7xl">
+        <header class="text-2xl font-bold my-6">
+          Welcome <span class="username text-indigo-400">username</span>
         </header>
         <ul
-          class="grid grid-cols-2 w-full justify-center items-center shadow-md divide-x-2"
+          class="grid grid-cols-2 w-full justify-center items-center shadow-md gap-2"
         >
-          <li id="all" class="title cursor-pointer text-center">All Posts</li>
-          <li id="my" class="title cursor-pointer text-center">My Posts</li>
+          <li
+            id="all"
+            class="title cursor-pointer text-center rounded-md ring-1 py-2 hover:bg-gray-500"
+          >
+            All Posts
+          </li>
+          <li
+            id="my"
+            class="title cursor-pointer text-center rounded-md ring-1 py-2 hover:bg-gray-500"
+          >
+            My Posts
+          </li>
         </ul>
         <div
           id="postContainer"

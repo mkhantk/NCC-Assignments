@@ -44,7 +44,7 @@ function displayData(data) {
 
   if (data.length === 0) {
     dataTemplate += `
-      <div class="flex min-w-96 shadow-md rounded-md p-3 cursor-pointer bg-indigo-300">Posts not found!</div>
+      <div class="flex sm:min-w-96 shadow-md rounded-md p-3 cursor-pointer bg-gradient-to-br from-gray-600 to-indigo-300">Posts not found!</div>
     
     `;
     postContainer.innerHTML = dataTemplate;
@@ -56,7 +56,7 @@ function displayData(data) {
         <div class="contentDiv">
           <div class="titleDiv">
             <p>${item.title}</p>
-            <p>${new Date(item.created_at).toDateString()}</p>
+            <p class="titleDate">${new Date(item.created_at).toDateString()}</p>
           </div>
           <p>${item.content.split(" ").splice(0, 20).join(" ")}</p>
           <div class="authorDiv">by ${item.created_by}</div>
