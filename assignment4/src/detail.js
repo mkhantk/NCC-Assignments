@@ -36,20 +36,15 @@ const getData = async (postId) => {
             const form = document.querySelector("#editForm");
 
             // console.log(initialFormValue);
-            form.editImage.addEventListener("change", (e) => {
-              console.log(e);
-            });
+            // form.editImage.addEventListener("change", (e) => {
+            //   console.log(e);
+            // });
             //handle submit
             form.addEventListener("submit", (event) => {
               event.preventDefault();
               //submit function
               submitEdit(result, event, url);
             });
-
-            // console.log(editData);
-            // document.querySelector("#proceed").addEventListener("click", (e) => {
-
-            // })
           } else {
             document
               .querySelector(".correct-delete")
@@ -182,8 +177,6 @@ async function submitEdit(data, event, url) {
     .then((response) => response.json())
     .then((response) => console.log(response))
     .catch((error) => console.error(error));
-}
 
-function handleInput(e) {
-  console.log(e);
+  window.location.href = "detail.html";
 }

@@ -9,9 +9,11 @@ window.onload = async () => {
   const result = await data.json();
 
   // console.log(result);
-  let count = result.length;
+  // let count = result.length;
+  const last = result.splice(-1);
+  console.log(typeof last[0].id);
 
-  createData.id = (count + 1).toString();
+  createData.id = (Number(last[0].id) + 1).toString();
 };
 
 createForm.createImg.addEventListener("input", (e) => {
@@ -22,7 +24,9 @@ createForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   createData.title = createForm.createTitle.value;
-  createData.image_url = createForm.createImg.files[0].name;
+  if (createForm.createImg.value) {
+    createData.image_url = createForm.createImg.files[0].name;
+  }
   createData.content = createForm.createContent.value;
   createData.created_at = new Date().toISOString();
   createData.created_by = JSON.parse(
@@ -38,7 +42,7 @@ createForm.addEventListener("submit", async (e) => {
     body: JSON.stringify(createData),
   })
     .then((response) => response.json())
-    .then((response) => console.log(resonse))
+    .then((response) => console.log(response))
     .catch((error) => console.error(error));
 
   window.location.href = "homepage.html";
