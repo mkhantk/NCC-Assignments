@@ -31,7 +31,6 @@ loginForm.addEventListener("submit", (e) => {
   if (Object.keys(data).length >= 2) {
     let string = JSON.stringify(data);
     localStorage.setItem("bloggify_js_app", string);
+    window.location.replace("homepage.html");
   }
-
-  window.location.href = "homepage.html";
 });
