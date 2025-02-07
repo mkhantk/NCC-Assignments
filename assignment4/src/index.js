@@ -4,7 +4,7 @@ const previewContainer = document.querySelector("#preview_container");
 
 const getData = async () => {
   try {
-    const data = await fetch("http://localhost:3000/posts");
+    const data = await fetch("https://best-scented-operation.glitch.me/posts");
     const result = await data.json();
     // console.log("this is result", result);
 

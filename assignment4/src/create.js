@@ -1,7 +1,7 @@
 //variables
 const createForm = document.querySelector("#createForm");
 const afterCreateImg = document.querySelector("#afterCreateImg");
-const url = "http://localhost:3000/posts";
+const url = "https://best-scented-operation.glitch.me/posts";
 let createData = {};
 
 window.onload = async () => {

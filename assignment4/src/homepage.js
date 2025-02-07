@@ -17,7 +17,7 @@ titles.forEach((title) =>
 
 const getData = async (state) => {
   try {
-    const data = await fetch("http://localhost:3000/posts");
+    const data = await fetch("https://best-scented-operation.glitch.me/posts");
     const result = await data.json();
     if (state === "my") {
       let filtered = result.filter((item) => item.created_by === username.name);

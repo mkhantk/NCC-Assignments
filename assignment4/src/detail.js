@@ -11,7 +11,7 @@ window.onload = () => {
 const getData = async (postId) => {
   try {
     // const id = postId;
-    const url = `http://localhost:3000/posts/${+postId}`;
+    const url = `https://best-scented-operation.glitch.me/posts/${+postId}`;
     // console.log(id);
     const response = await fetch(url);
     const result = await response.json();
@@ -71,7 +71,7 @@ const getData = async (postId) => {
           // result.splice(id - 1, 1);
           document.querySelector(".correct-delete").classList.add("hidden");
           // deletePost(url);
-          window.location.href = "homepage.html";
+          // window.location.replace("homepage.html");
           try {
             const deleteResponse = await fetch(url, {
               method: "DELETE",
@@ -81,7 +81,7 @@ const getData = async (postId) => {
             });
             if (deleteResponse.ok) {
               console.log("Post successfully deleted");
-              window.location.herf = "homepage.html";
+              window.location.replace("homepage.html");
             } else {
               throw new Error("failed to delete post");
             }
