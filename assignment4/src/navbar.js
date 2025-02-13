@@ -20,7 +20,7 @@ toLogin.forEach((item) =>
 
 toPostsPage.forEach((item) =>
   item.addEventListener("click", () => {
-    if (localStorage.getItem("bloggify_js_app")) {
+    if (localStorage.getItem("BlogX_js_app")) {
       window.location.href = "homepage.html";
     } else {
       window.location.href = "login.html";
@@ -30,7 +30,7 @@ toPostsPage.forEach((item) =>
 
 toCreate.forEach((item) =>
   item.addEventListener("click", () => {
-    if (localStorage.getItem("bloggify_js_app")) {
+    if (localStorage.getItem("BlogX_js_app")) {
       window.location.href = "create.html";
     } else {
       window.location.href = "login.html";
@@ -40,7 +40,7 @@ toCreate.forEach((item) =>
 //check if there is any item in local storage to determin whether to show login or logout button
 document.addEventListener("DOMContentLoaded", () => {
   // console.log("loaded");
-  if (localStorage.getItem("bloggify_js_app")) {
+  if (localStorage.getItem("BlogX_js_app")) {
     loginButton.style.display = "none";
     logoutButton.style.display = "block";
     // window.location.href = "homepage.html";
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 logoutButton.addEventListener("click", () => {
-  localStorage.removeItem("bloggify_js_app");
+  localStorage.removeItem("BlogX_js_app");
   localStorage.clear();
   window.location.href = "index.html";
 });

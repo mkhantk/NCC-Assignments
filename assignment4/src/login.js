@@ -32,7 +32,7 @@ loginForm.addEventListener("submit", (e) => {
     // let string = JSON.stringify(data);
     checkUser(data);
 
-    // localStorage.setItem("bloggify_js_app", string);
+    // localStorage.setItem("BlogX_js_app", string);
     // window.location.replace("homepage.html");
   }
 });
@@ -55,7 +55,7 @@ async function checkUser(data) {
     if (checking[0].pwd === data.password) {
       console.log(true);
       let string = JSON.stringify(data);
-      localStorage.setItem("bloggify_js_app", string);
+      localStorage.setItem("BlogX_js_app", string);
       window.location.replace("homepage.html");
       document.querySelector(".incorrectPwd").style.display = "none";
     } else {
@@ -85,6 +85,6 @@ async function loginNewUser(url, data) {
     .then((respnse) => console.log(respnse))
     .catch((error) => console.error(error));
 
-  localStorage.setItem("bloggify_js_app", string);
+  localStorage.setItem("BlogX_js_app", string);
   window.location.replace("homepage.html");
 }

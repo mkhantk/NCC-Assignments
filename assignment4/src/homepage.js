@@ -2,7 +2,7 @@
 const titles = document.querySelectorAll(".title");
 const postContainer = document.querySelector("#postContainer");
 const uNameDisplay = document.querySelector(".username");
-let username = JSON.parse(localStorage.getItem("bloggify_js_app"));
+let username = JSON.parse(localStorage.getItem("BlogX_js_app"));
 
 window.onload = () => {
   // console.log(JSON.parse(username));

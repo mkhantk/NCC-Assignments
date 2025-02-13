@@ -29,9 +29,7 @@ createForm.addEventListener("submit", async (e) => {
   }
   createData.content = createForm.createContent.value;
   createData.created_at = new Date().toISOString();
-  createData.created_by = JSON.parse(
-    localStorage.getItem("bloggify_js_app")
-  ).name;
+  createData.created_by = JSON.parse(localStorage.getItem("BlogX_js_app")).name;
   // console.log(createData.created_by);
 
   const resonse = await fetch(url, {

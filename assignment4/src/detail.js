@@ -23,7 +23,7 @@ const getData = async (postId) => {
       button.addEventListener("click", async (e) => {
         //check if the user is the same as the post author
         if (
-          JSON.parse(localStorage.getItem("bloggify_js_app")).name ===
+          JSON.parse(localStorage.getItem("BlogX_js_app")).name ===
           result.created_by
         ) {
           // console.log(true);

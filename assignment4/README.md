@@ -1,10 +1,10 @@
-# **Bloggify**
+# **BlogX**
 
 ![screenshot](src/screenshot.png)
 
 ## **1. Introduction**
 
-Welcome to **Bloggify**—a great place to write blog posts and share your thoughts with others. This project is a **multi-page blogging website** that allows users to **Create, Read, Update, and Delete** blog posts.
+Welcome to **BlogX**—a great place to write blog posts and share your thoughts with others. This project is a **multi-page blogging website** that allows users to **Create, Read, Update, and Delete** blog posts.
 
 The website features:
 
