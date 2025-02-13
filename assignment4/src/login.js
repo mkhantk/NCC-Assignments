@@ -51,7 +51,8 @@ async function checkUser(data) {
 
   const checking = await result.filter((item) => item.name === data.name);
 
-  if (checking) {
+  if (checking[0]) {
+    console.log(checking);
     if (checking[0].pwd === data.password) {
       console.log(true);
       let string = JSON.stringify(data);
