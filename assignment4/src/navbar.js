@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     loginButton.style.display = "block";
     logoutButton.style.display = "none";
-    console.log("logoted");
+    // console.log("logoted");
   }
 
   const url = window.location.href;

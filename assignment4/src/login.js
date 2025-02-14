@@ -52,9 +52,9 @@ async function checkUser(data) {
   const checking = await result.filter((item) => item.name === data.name);
 
   if (checking[0]) {
-    console.log(checking);
+    // console.log(checking);
     if (checking[0].pwd === data.password) {
-      console.log(true);
+      // console.log(true);
       let string = JSON.stringify(data);
       localStorage.setItem("BlogX_js_app", string);
       window.location.replace("homepage.html");
@@ -63,7 +63,7 @@ async function checkUser(data) {
       document.querySelector(".incorrectPwd").style.display = "block";
     }
   } else {
-    console.log(false);
+    // console.log(false);
     loginNewUser(url, data);
 
     //if false, this shows that there is no data about this uername in the database.

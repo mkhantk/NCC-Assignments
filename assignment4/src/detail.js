@@ -75,7 +75,7 @@ const getData = async (postId) => {
               },
             });
             if (deleteResponse.ok) {
-              console.log("Post successfully deleted");
+              // console.log("Post successfully deleted");
               window.location.replace("homepage.html");
             } else {
               throw new Error("failed to delete post");
@@ -154,12 +154,12 @@ async function submitEdit(data, event, url) {
   // event.preventDefault();
   const editData = {};
   if (event.target[0].value != data.title) {
-    console.log(event.target[0].value);
+    // console.log(event.target[0].value);
     editData.title = event.target[0].value;
   }
 
   if (event.target[1].value) {
-    console.log("edited");
+    // console.log("edited");
     editData.image_url = event.target[1].files[0].name;
     // console.log(event.target[1]);
   }

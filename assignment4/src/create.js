@@ -11,7 +11,7 @@ window.onload = async () => {
   // console.log(result);
   // let count = result.length;
   const last = result.splice(-1);
-  console.log(typeof last[0].id);
+  // console.log(typeof last[0].id);
 
   createData.id = (Number(last[0].id) + 1).toString();
 };
