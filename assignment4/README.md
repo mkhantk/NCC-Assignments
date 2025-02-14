@@ -40,7 +40,7 @@ This project is built using:
 
 ### **Run Locally**
 
-1. **Download the ZIP file**
+1. **[Download the ZIP file from releases](https://github.com/mkhantk/NCC-Assignments/releases/)**
 2. **Extract the ZIP file**
 3. **Open the folder in VS Code** (or any code editor).
 4. **Run Live Server** (if using VS Code) to view the page locally.
