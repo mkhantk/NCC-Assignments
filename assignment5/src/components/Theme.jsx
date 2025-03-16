@@ -14,14 +14,20 @@ function Theme() {
           src={lightMode}
           alt=""
           className="w-5 m-auto"
-          onClick={() => dispatch({ type: "setLight" })}
+          onClick={() => {
+            dispatch({ type: "setLight" });
+            dispatch({ type: "setRadioChecked", payload: "white" });
+          }}
         />
       ) : (
         <img
           src={darkMode}
           alt=""
           className="w-4 m-auto"
-          onClick={() => dispatch({ type: "setDark" })}
+          onClick={() => {
+            dispatch({ type: "setDark" });
+            dispatch({ type: "setRadioChecked", payload: "dark" });
+          }}
         />
       )}
     </div>

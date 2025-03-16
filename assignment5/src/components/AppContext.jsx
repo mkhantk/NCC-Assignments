@@ -53,6 +53,11 @@ function reducer(state, action) {
         ...state,
         fer: action.payload,
       };
+    case "setRadioChecked":
+      return {
+        ...state,
+        radioChecked: action.payload,
+      };
     default:
       return state;
   }
@@ -63,6 +68,7 @@ export const Context = createContext();
 const initialState = {
   dark: false,
   login: false,
+  radioChecked: "white",
   todoList: [],
   searchTodo: "",
   filteredList: [],
@@ -79,9 +85,16 @@ const AppContext = ({ children }) => {
     dispatch,
   };
 
+  const isDark = JSON.parse(localStorage.getItem("react_app_login"));
+  // console.log(isDark.theme);
+
   return (
     <Context.Provider value={value}>
-      <div className={`min-h-screen  ${state.dark ? "dark" : ""}`}>
+      <div
+        className={`min-h-screen  ${
+          state.dark || isDark.theme === "dark" ? "dark" : ""
+        }`}
+      >
         {children}
       </div>
     </Context.Provider>

@@ -3,7 +3,7 @@ import { Context } from "./AppContext";
 
 const Login = () => {
   const { state, dispatch } = useContext(Context);
-  const { dark, login } = state;
+  const { dark, login, radioChecked } = state;
 
   const numReg = /^\+\d+$/;
   const [isNumber, setIsNumber] = useState(true);
@@ -14,7 +14,7 @@ const Login = () => {
   const emailReg = /^[^@]+@[^@]+\.[^@]+$/;
   const [isEmail, setIsEmail] = useState(true);
 
-  const [radioChecked, setRadioChecked] = useState("white");
+  // const [radioChecked, setRadioChecked] = useState("white");
 
   const [error, setError] = useState(false);
 
@@ -119,8 +119,9 @@ const Login = () => {
                 id="ucolorDark"
                 name="ucolor"
                 value="dark"
+                checked={radioChecked === "dark"}
                 onChange={() => {
-                  setRadioChecked("dark");
+                  dispatch({ type: "setRadioChecked", payload: "dark" });
                   dispatch({ type: "setDark" });
                 }}
               />
@@ -136,7 +137,7 @@ const Login = () => {
                 value="white"
                 checked={radioChecked === "white"}
                 onChange={() => {
-                  setRadioChecked("white");
+                  dispatch({ type: "setRadioChecked", payload: "white" });
                   dispatch({ type: "setLight" });
                 }}
               />
