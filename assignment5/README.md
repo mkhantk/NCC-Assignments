@@ -18,4 +18,4 @@
 
 ## Summary
 
-I mainly use useReducer and useContext hooks to handle the states and action of the application. For the login page, I merely add the login/ logout function just for the sake of assignment, it doesn't have the persistent effect apart from theme choice. The same goes for the to-do list data. In the end, I got the hands on experience on how to combine the useReducer and useContext hook to create a seamless app.
+I mainly use useReducer and useContext hooks to handle the states and action of the application. For the login page, I merely add the login/ logout function just for the sake of assignment, it doesn't have the pesistence. The same goes for the to-do list data. In the end, I got the hands on experience on how to combine the useReducer and useContext hook to create a seamless app.
