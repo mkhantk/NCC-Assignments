@@ -3,7 +3,7 @@
 ## Instructions
 
 1. **Download and unzip**
-   - Download the zip file [here](https://#) and extract it
+   - Download the zip file [here](https://github.com/mkhantk/NCC-Assignments/releases/tag/v1.0.1) and extract it
 2. **Install Dependencies**
    - open terminal in the project folder and run `npm install`
 3. **Run the project**
