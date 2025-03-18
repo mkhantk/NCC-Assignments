@@ -7,6 +7,7 @@ function Theme() {
   const { state, dispatch } = useContext(Context);
   const { dark } = state;
   // console.log(dark);
+  // const currentTheme = JSON.parse(localStorage.getItem("react_app_login"));
   return (
     <div className="w-7 cursor-pointer">
       {dark ? (

@@ -1,4 +1,4 @@
-import React, { act, createContext, useReducer } from "react";
+import React, { act, createContext, useEffect, useReducer } from "react";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -66,7 +66,9 @@ function reducer(state, action) {
 export const Context = createContext();
 
 const initialState = {
-  dark: false,
+  dark:
+    JSON.parse(localStorage.getItem("react_app_login")).theme === "dark" ||
+    false,
   login: false,
   radioChecked: "white",
   todoList: [],
@@ -85,16 +87,15 @@ const AppContext = ({ children }) => {
     dispatch,
   };
 
-  const isDark = JSON.parse(localStorage.getItem("react_app_login"));
-  // console.log(isDark.theme);
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("react_app_login"));
+    user.theme = state.dark ? "dark" : "white";
+    localStorage.setItem("react_app_login", JSON.stringify(user));
+  }, [state.dark]);
 
   return (
     <Context.Provider value={value}>
-      <div
-        className={`min-h-screen  ${
-          state.dark || isDark.theme === "dark" ? "dark" : ""
-        }`}
-      >
+      <div className={`min-h-screen  ${state.dark ? "dark" : ""}`}>
         {children}
       </div>
     </Context.Provider>

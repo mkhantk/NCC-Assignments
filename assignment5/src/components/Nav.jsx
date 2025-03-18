@@ -8,12 +8,14 @@ import tempdark from "../assets/temperaturedark.svg";
 
 function Nav() {
   const { state, dispatch } = useContext(Context);
-  const { login, dark, currentPage } = state;
+  const { login, dark } = state;
 
   const handleClick = (e) => {
     // console.log(e.currentTarget.id);
     dispatch({ type: "changePage", payload: e.currentTarget.id });
   };
+
+  // const currentTheme = JSON.parse(localStorage.getItem("react_app_login"))
   return (
     <div className="mb-auto flex justify-end items-center gap-5 w-full p-5 border-b border-black dark:border-gray-200 text-gray-900 dark:text-gray-200 absolute top-0">
       <div
