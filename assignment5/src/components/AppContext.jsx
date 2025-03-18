@@ -66,9 +66,7 @@ function reducer(state, action) {
 export const Context = createContext();
 
 const initialState = {
-  dark:
-    JSON.parse(localStorage.getItem("react_app_login")).theme === "dark" ||
-    false,
+  dark: false,
   login: false,
   radioChecked: "white",
   todoList: [],
@@ -86,12 +84,6 @@ const AppContext = ({ children }) => {
     state,
     dispatch,
   };
-
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("react_app_login"));
-    user.theme = state.dark ? "dark" : "white";
-    localStorage.setItem("react_app_login", JSON.stringify(user));
-  }, [state.dark]);
 
   return (
     <Context.Provider value={value}>
