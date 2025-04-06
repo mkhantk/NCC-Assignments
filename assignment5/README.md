@@ -18,4 +18,6 @@
 
 ## Summary
 
-I mainly use useReducer and useContext hooks to handle the states and action of the application. For the login page, I merely add the login/ logout function just for the sake of assignment, it doesn't have the pesistence. The same goes for the to-do list data. In the end, I got the hands on experience on how to combine the useReducer and useContext hook to create a seamless app.
+This is a component based react project that showcases an application, that is able to switch between todo list, register form and temperature converter with light and dark theme switch toggle.
+
+I mainly use useReducer and useContext hooks to handle the states and action of the application. By doing so, It make it easier to handle the states and the actions related to the states. To conclude, I got the hands on experience on how to combine the useReducer and useContext hook to create a seamless app.
