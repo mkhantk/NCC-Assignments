@@ -1,15 +1,9 @@
-import React, { act, createContext, useEffect, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 
 function reducer(state, action) {
   switch (action.type) {
     case "setDark":
-      return { ...state, dark: true };
-    case "setLight":
-      return { ...state, dark: false };
-    case "setLogin":
-      return { ...state, login: !state.login };
-    case "setFalseLogin":
-      return { ...state, login: false };
+      return { ...state, dark: !state.dark };
     case "post_todo":
       return {
         ...state,
@@ -53,10 +47,10 @@ function reducer(state, action) {
         ...state,
         fer: action.payload,
       };
-    case "setRadioChecked":
+    case "displayResult":
       return {
         ...state,
-        radioChecked: action.payload,
+        result: action.payload,
       };
     default:
       return state;
@@ -67,14 +61,13 @@ export const Context = createContext();
 
 const initialState = {
   dark: false,
-  login: false,
-  radioChecked: "white",
   todoList: [],
   searchTodo: "",
   filteredList: [],
   currentPage: "todo",
   cel: "",
   fer: "",
+  result: "",
 };
 
 const AppContext = ({ children }) => {

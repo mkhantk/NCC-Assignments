@@ -3,7 +3,7 @@ import { Context } from "./AppContext";
 import del from "../assets/delete.svg";
 
 const Todo = () => {
-  const user = JSON.parse(localStorage.getItem("react_app_login"));
+  // const user = JSON.parse(localStorage.getItem("react_app_login"));
   // console.log(user.name);
 
   const { state, dispatch } = useContext(Context);
@@ -43,7 +43,7 @@ const Todo = () => {
   return (
     <div className="min-h-screen m-auto pt-32 flex flex-col justify-start items-center gap-5 w-[300px] md:w-1/2 md:max-w-2xl md:text-xl">
       <h2 className="text-blue-500 font-bold text-3xl md:text-4xl">
-        {user.name.split(" ")[0]}'s To Do List
+        To Do List
       </h2>
       <form
         className="flex justify-center items-center gap-5 w-full"

@@ -1,22 +1,20 @@
 import React, { useContext } from "react";
 import { Context } from "./components/AppContext";
 import Todo from "./components/Todo";
-import Login from "./components/Login";
+import Register from "./components/Register";
 import Temp from "./components/Temp";
 
 function View() {
   const { state, dispatch } = useContext(Context);
-  const { login, currentPage } = state;
+  const { currentPage } = state;
 
   const displayView = () => {
-    if (login || localStorage.getItem("react_app_login")) {
-      if (currentPage === "todo") {
-        return <Todo />;
-      } else if (currentPage === "temp") {
-        return <Temp />;
-      }
-    } else {
-      return <Login />;
+    if (currentPage === "todo") {
+      return <Todo />;
+    } else if (currentPage === "temp") {
+      return <Temp />;
+    } else if (currentPage === "register") {
+      return <Register />;
     }
   };
   return (
