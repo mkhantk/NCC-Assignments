@@ -1,6 +1,6 @@
 # Post and comment system
 
-[screenshot](./public/localhost_5173_.png)
+![screenshot](./public/localhost_5173_.png)
 
 ## Functions
 
