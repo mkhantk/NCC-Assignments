@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams, Navigate } from "react-router-dom";
 import useAppContext from "../../components/useAppContext";
+import NotFound from "../404/NotFound";
 
 function PostDetail() {
   const { dispatch } = useAppContext();
@@ -13,6 +14,7 @@ function PostDetail() {
   const [success, setSuccess] = useState(false);
   const [edit, setEdit] = useState(false);
   const [comment, setComment] = useState("");
+
   const url = `http://localhost:3000/posts/?id=${param.pId}&_embed=author&_embed=comments`;
 
   useEffect(() => {
@@ -22,12 +24,19 @@ function PostDetail() {
           axios.get(url),
           axios.get("http://localhost:3000/authors"),
         ]);
-        setPost(postRes.data);
-        setAuthors(authorRes.data);
-        setSuccess(true);
+
+        if (!postRes.data || Object.keys(postRes.data).length === 0) {
+          setSuccess(false);
+        } else {
+          setPost(postRes.data);
+          setAuthors(authorRes.data);
+          setSuccess(true);
+        }
+        // console.log("rigth");
       } catch (error) {
         console.error(error);
         setSuccess(false);
+        // console.log("wrong");
         // navigage("postNotFound");
       }
     };
@@ -204,60 +213,60 @@ function PostDetail() {
         </div>
       </div>
     </div>
+  ) : success ? (
+    <div className="mt-20 max-w-3xl m-auto p-5 md:p-0">
+      <h1 className="text-4xl font-bold my-8">Edit Post</h1>
+      <form
+        action=""
+        className="flex flex-col gap-5"
+        onSubmit={(e) => handleEdit(e)}
+      >
+        <input
+          type="text"
+          id="title"
+          placeholder="Title"
+          className="border border-gray-300 p-3 bg-gray-200 text-2xl focus:outline-blue-500"
+          defaultValue={post[0].title}
+          required
+        />
+        <input
+          type="text"
+          id="img"
+          placeholder="image url: if not entered, random image url will be used instead"
+          className="border border-gray-300 p-3 bg-gray-200 text-2xl focus:outline-blue-500 placeholder:text-red-500 placeholder:text-lg"
+          defaultValue={post[0].img}
+        />
+        <textarea
+          name="content"
+          id="content"
+          placeholder="Contents"
+          rows="15"
+          className="border border-gray-300 p-3 bg-gray-200 text-xl focus:outline-blue-500"
+          defaultValue={post[0].content}
+          required
+        ></textarea>
+        <div className="flex justify-around items-center my-2">
+          <button
+            type="reset"
+            className="px-4 py-1 border border-gray-300 text-lg rounded-md shadow-sm text-red-500 cursor-pointer"
+            onClick={() => {
+              setEdit(false);
+              navigage(`/posts/${post[0].id}`);
+            }}
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            className="px-4 py-1 border border-gray-300 text-lg rounded-md shadow-sm text-blue-500 cursor-pointer"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
   ) : (
-    success && (
-      <div className="mt-20 max-w-3xl m-auto p-5 md:p-0">
-        <h1 className="text-4xl font-bold my-8">Edit Post</h1>
-        <form
-          action=""
-          className="flex flex-col gap-5"
-          onSubmit={(e) => handleEdit(e)}
-        >
-          <input
-            type="text"
-            id="title"
-            placeholder="Title"
-            className="border border-gray-300 p-3 bg-gray-200 text-2xl focus:outline-blue-500"
-            defaultValue={post[0].title}
-            required
-          />
-          <input
-            type="text"
-            id="img"
-            placeholder="image url: if not entered, random image url will be used instead"
-            className="border border-gray-300 p-3 bg-gray-200 text-2xl focus:outline-blue-500 placeholder:text-red-500 placeholder:text-lg"
-            defaultValue={post[0].img}
-          />
-          <textarea
-            name="content"
-            id="content"
-            placeholder="Contents"
-            rows="15"
-            className="border border-gray-300 p-3 bg-gray-200 text-xl focus:outline-blue-500"
-            defaultValue={post[0].content}
-            required
-          ></textarea>
-          <div className="flex justify-around items-center my-2">
-            <button
-              type="reset"
-              className="px-4 py-1 border border-gray-300 text-lg rounded-md shadow-sm text-red-500 cursor-pointer"
-              onClick={() => {
-                setEdit(false);
-                navigage(`/posts/${post[0].id}`);
-              }}
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              className="px-4 py-1 border border-gray-300 text-lg rounded-md shadow-sm text-blue-500 cursor-pointer"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-    )
+    !success && <NotFound />
   );
 }
 
