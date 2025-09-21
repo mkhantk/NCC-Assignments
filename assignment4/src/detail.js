@@ -153,22 +153,33 @@ async function submitEdit(data, event, url) {
   //compare with the existing data whicih is result and then update the changes\\
   // event.preventDefault();
   const editData = {};
-  if (event.target[0].value != data.title) {
+  let prevData = data;
+
+  editData.id = prevData.id;
+  editData.created_at = prevData.created_at;
+  editData.created_by = prevData.created_by;
+
+  if (event.target[0].value != prevData.title) {
     // console.log(event.target[0].value);
     editData.title = event.target[0].value;
+  } else {
+    editData.title = prevData.title;
   }
 
   if (event.target[1].value) {
     // console.log("edited");
     editData.image_url = event.target[1].files[0].name;
     // console.log(event.target[1]);
+  } else {
+    editData.image_url = prevData.image_url;
   }
   if (event.target[2].value != data.content) {
     editData.content = event.target[2].value;
+  } else {
+    editData.content = prevData.content;
   }
-
   await fetch(url, {
-    method: "PATCH",
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
