@@ -11,7 +11,7 @@ window.onload = () => {
 const getData = async (postId) => {
   try {
     // const id = postId;
-    const url = `https://best-scented-operation.glitch.me/posts/${+postId}`;
+    const url = `https://68d02f8bec1a5ff33826b237.mockapi.io/api/v1/posts/${+postId}`;
     // console.log(id);
     const response = await fetch(url);
     const result = await response.json();

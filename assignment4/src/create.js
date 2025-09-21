@@ -1,7 +1,7 @@
 //variables
 const createForm = document.querySelector("#createForm");
 const afterCreateImg = document.querySelector("#afterCreateImg");
-const url = "https://best-scented-operation.glitch.me/posts";
+const url = "https://68d02f8bec1a5ff33826b237.mockapi.io/api/v1/posts";
 let createData = {};
 
 window.onload = async () => {

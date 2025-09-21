@@ -45,7 +45,7 @@ loginForm.addEventListener("submit", (e) => {
 //if it doesn't exit, it will add it to the databse for later use. the rest is still the same.
 
 async function checkUser(data) {
-  const url = `https://best-scented-operation.glitch.me/users/`;
+  const url = `https://68d02f8bec1a5ff33826b237.mockapi.io/api/v1/users/`;
   const response = await fetch(url);
   const result = await response.json();
 

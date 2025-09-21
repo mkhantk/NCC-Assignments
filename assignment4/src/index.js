@@ -4,7 +4,9 @@ const previewContainer = document.querySelector("#preview_container");
 
 const getData = async () => {
   try {
-    const data = await fetch("https://best-scented-operation.glitch.me/posts");
+    const data = await fetch(
+      "https://68d02f8bec1a5ff33826b237.mockapi.io/api/v1/posts"
+    );
     const result = await data.json();
     // console.log("this is result", result);
 

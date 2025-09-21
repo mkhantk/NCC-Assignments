@@ -17,7 +17,9 @@ titles.forEach((title) =>
 
 const getData = async (state) => {
   try {
-    const data = await fetch("https://best-scented-operation.glitch.me/posts");
+    const data = await fetch(
+      "https://68d02f8bec1a5ff33826b237.mockapi.io/api/v1/posts"
+    );
     const result = await data.json();
     if (state === "my") {
       let filtered = result.filter((item) => item.created_by === username.name);
